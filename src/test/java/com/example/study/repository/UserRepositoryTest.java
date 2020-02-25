@@ -15,16 +15,17 @@ public class UserRepositoryTest extends DemoApplicationTests {
     @Test
     public void create() {
         User user = new User();
-        user.setAccount("TestUser01");
-        user.setEmail("TestUser01@naver.com");
-        user.setPhoneNumber("010-4536-1013");
+        user.setAccount("TestUser03");
+        user.setEmail("TestUser03@naver.com");
+        user.setPhoneNumber("010-1234-1013");
         user.setCreateAt(LocalDateTime.now());
-        user.setCreateBy("TestUser_Admin");
+        user.setCreateBy("TestUser_Admin03");
 
         User newUser = userRepository.save(user);
-        System.out.println("new_User : " + newUser);
+        System.out.println("new_User03 : " + newUser);
     }
 
+    @Test
     public void reade() {
 
     }
