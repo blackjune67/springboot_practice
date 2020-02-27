@@ -20,8 +20,9 @@ import java.time.LocalDateTime;
 @Entity
 //@Table(name = "user")
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //IDENTITY기본키 생성을 DB에 위임하는 방법
     private Long id;
     //@Column(name = "account") 위와 동일.
     //@Column(name = "account")
