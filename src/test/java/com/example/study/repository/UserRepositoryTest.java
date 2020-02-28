@@ -1,6 +1,6 @@
 package com.example.study.repository;
 
-import com.example.study.DemoApplicationTests;
+import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.User;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public class UserRepositoryTest extends DemoApplicationTests {
+public class UserRepositoryTest extends StudyApplicationTests {
 
     @Autowired
     private UserRepository userRepository;
