@@ -1,9 +1,12 @@
 package com.example.study.repository;
 
 import com.example.study.StudyApplicationTests;
+
+import com.example.study.model.entity.Item;
 import com.example.study.model.entity.User;
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.transaction.Transactional;
@@ -18,27 +21,33 @@ public class UserRepositoryTest extends StudyApplicationTests {
     @Test
     public void create() {
         User user = new User();
-        user.setAccount("TestUser01");
+        user.setAccount("TestUser00");
         user.setEmail("TestUser01@naver.com");
-        user.setPhoneNumber("010-1211-1013");
-        user.setCreateAt(LocalDateTime.now());
-        user.setCreateBy("TestUser_Admin01");
+        user.setPhoneNumber("010-1234-1013");
+        user.setCreatedAt(LocalDateTime.now());
+        user.setCreatedBy("TestUser_Admin00");
 
         User newUser = userRepository.save(user);
-        System.out.println("new_User01 : " + newUser);
+        System.out.println("new_User00 : " + newUser);
     }
 
     @Test
+    @Transactional
     public void read() {
         Optional<User> user = userRepository.findById(1L);
 
         user.ifPresent(selectUser -> {
-            System.out.println("user : " + user);
-            System.out.println("eamil : " + selectUser.getEmail());
+            //System.out.println("user : " + user);
+            //System.out.println("eamil : " + selectUser.getEmail());
+
+            selectUser.getOrderDetailsList().stream().forEach(detail -> {
+                Item item = detail.getItem();
+                System.out.println(item);
+            });
         });
     }
 
-    @Test
+/*    @Test
     public void update() {
         Optional<User> user = userRepository.findById(1L);
 
@@ -62,10 +71,10 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
         Optional<User> deleteUser = userRepository.findById(2L);
         Assert.assertFalse(deleteUser.isPresent()); //false
-/*        if(deleteUser.isPresent()) {
+        if(deleteUser.isPresent()) {
             System.out.println("user DATA 가 있습니다." + deleteUser.get());
         } else {
             System.out.println("user DATA 가 없습니다.");
-        }*/
-    }
+        }
+    }*/
 }

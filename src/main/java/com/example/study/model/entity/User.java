@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /*
  * @author hajune.choi
@@ -32,12 +33,16 @@ public class User {
     //@Column(name = "phone_number")
     private String phoneNumber;
     //@Column(name = "created_at")
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
     //@Column(name = "created_by")
-    private String createBy;
+    private String createdBy;
     //@Column(name = "updated_at")
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
     //@Column(name = "updated_by")
-    private String updateBy;
+    private String updatedBy;
+
+    // 1 : N
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user") // orderDetail 안의 user를 의미.
+    private List<OrderDetail> orderDetailsList;
 
 }

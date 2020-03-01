@@ -3,8 +3,10 @@ package com.example.study.repository;
 import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.Item;
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 public class RepositoryTest extends StudyApplicationTests {
 
@@ -25,8 +27,10 @@ public class RepositoryTest extends StudyApplicationTests {
 
     @Test
     public void read() {
+        Long id = 6L;
 
-
+        Optional<Item> item = itemRepository.findById(id);
+        Assert.assertTrue(item.isPresent());
     }
 
 }
