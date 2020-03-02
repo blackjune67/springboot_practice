@@ -34,7 +34,8 @@ public class UserRepositoryTest extends StudyApplicationTests {
     @Test
     @Transactional
     public void read() {
-        Optional<User> user = userRepository.findById(1L);
+        //쿼리문 select * from user where id = ?
+        Optional<User> user = userRepository.findByAccountAndEmail("TestUser00", "TestUser01@naver.com");
 
         user.ifPresent(selectUser -> {
             //System.out.println("user : " + user);
@@ -42,7 +43,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
             selectUser.getOrderDetailsList().stream().forEach(detail -> {
                 Item item = detail.getItem();
-                System.out.println(item);
+                System.out.println(">>>>>>>>>>>> : " + item);
             });
         });
     }

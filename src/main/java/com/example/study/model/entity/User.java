@@ -42,6 +42,10 @@ public class User {
     private String updatedBy;
 
     // 1 : N
+    // LAZY = 지연로딩, EAGER = 즉시로딩
+
+    // LAZY = select * from item where id = ?
+    // EAGER =  1 : 1 , LAZY = 1 : N
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user") // orderDetail 안의 user를 의미.
     private List<OrderDetail> orderDetailsList;
 
