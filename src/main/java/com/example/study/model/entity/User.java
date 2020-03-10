@@ -29,6 +29,7 @@ public class User {
     //@Column(name = "account")
     private String account;
     //@Column(name = "email")
+    private String status;
     private String email;
     //@Column(name = "phone_number")
     private String phoneNumber;
