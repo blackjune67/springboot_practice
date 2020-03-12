@@ -14,6 +14,7 @@ public class CategoryRepositoryTest extends StudyApplicationTests {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    //git commit TEST!
     @Test
     public void create() {
         String type = "Computer";
