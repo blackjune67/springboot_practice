@@ -13,6 +13,7 @@ import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+
 public class UserRepositoryTest extends StudyApplicationTests {
 
     @Autowired
@@ -20,6 +21,28 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
     @Test
     public void create() {
+        String account = "test01";
+        String password = "Test01";
+        String status = "REGISTERED";
+        String email = "Test01@gmail.com";
+        String phoneNumber = "010-4536-1013";
+        LocalDateTime registredAt = LocalDateTime.now();
+        LocalDateTime createAt = LocalDateTime.now();
+        String createBy = "AdminServer";
+
+        User user = new User();
+        user.setAccount(account);
+        user.setPassword(password);
+        user.setStatus(status);
+        user.setEmail(email);
+        user.setPhoneNumber(phoneNumber);
+        user.setRegisteredAt(registredAt);
+        user.setCreatedAt(createAt);
+        user.setCreatedBy(createBy);
+
+        User newUser = userRepository.save(user);
+
+        Assert.assertNotNull(newUser); // newUser가 null이 아니여야 한다.
 
 
     }
@@ -27,6 +50,17 @@ public class UserRepositoryTest extends StudyApplicationTests {
     @Test
     @Transactional
     public void read() {
+        String phoneNumber = "010-4536";
+        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc(phoneNumber);
+        Assert.assertNotNull(user);
+/*        String phoneNumber = "010-4536-1013";
+
+        Optional<User> optionalUser = userRepository.findByPhoneNumber(phoneNumber);
+
+        optionalUser.ifPresent(c -> {
+            Assert.assertNotNull(c.getPhoneNumber(), phoneNumber);
+            System.out.println(c.getPhoneNumber());
+        });*/
 
 
     }

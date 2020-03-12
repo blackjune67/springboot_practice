@@ -35,8 +35,9 @@ public class User {
     //@Column(name = "phone_number")
     private String phoneNumber;
     //@Column(name = "created_at")
-    private String registeredAt;
-    private String unregisteredAt;
+    private LocalDateTime registeredAt;
+    private LocalDateTime unregisteredAt;
+
     private LocalDateTime createdAt;
     //@Column(name = "created_by")
     private String createdBy;

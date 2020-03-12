@@ -23,11 +23,11 @@ public class Partner {
     private String status;
     private String address;
     private String callCenter;
-    private String phoneNumber;
+    private String partnerNumber;
     private String businessNumber;
     private String ceoName;
-    private String registeredAt;
-    private String unregisteredAt;
+    private LocalDateTime registeredAt;
+    private LocalDateTime unregisteredAt;
     private LocalDateTime createdAt;
     private String createdBy;
     private LocalDateTime updatedAt;
