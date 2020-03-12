@@ -15,9 +15,9 @@ import java.util.List;
  * @return
  */
 //@Table(name="user") //클래스 이름과 DB테이블의 이름이 동일하다면 굳이 @Table name 을 안해도 됨.
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
 //@Table(name = "user")
 public class User {
@@ -29,11 +29,14 @@ public class User {
     //@Column(name = "account")
     private String account;
     //@Column(name = "email")
+    private String password;
     private String status;
     private String email;
     //@Column(name = "phone_number")
     private String phoneNumber;
     //@Column(name = "created_at")
+    private String registeredAt;
+    private String unregisteredAt;
     private LocalDateTime createdAt;
     //@Column(name = "created_by")
     private String createdBy;
@@ -44,10 +47,9 @@ public class User {
 
     // 1 : N
     // LAZY = 지연로딩, EAGER = 즉시로딩
-
     // LAZY = select * from item where id = ?
     // EAGER =  1 : 1 , LAZY = 1 : N
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user") // orderDetail 안의 user를 의미.
-    private List<OrderDetail> orderDetailsList;
+    /*@OneToMany(fetch = FetchType.LAZY, mappedBy = "user") // orderDetail 안의 user를 의미.
+    private List<OrderDetail> orderDetailsList;*/
 
 }
