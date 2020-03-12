@@ -22,7 +22,7 @@ public class Partner {
     private String name;
     private String status;
     private String address;
-    private  String callCenter;
+    private String callCenter;
     private String phoneNumber;
     private String businessNumber;
     private String ceoName;

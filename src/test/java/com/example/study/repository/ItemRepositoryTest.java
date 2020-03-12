@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 
-public class RepositoryTest extends StudyApplicationTests {
+public class ItemRepositoryTest extends StudyApplicationTests {
 
     @Autowired
     private ItemRepository itemRepository;
