@@ -22,7 +22,7 @@ public class CategoryRepositoryTest extends StudyApplicationTests {
 
     @Autowired
     private CategoryRepository categoryRepository;
-
+    //한글 테스트
     @Test
     public void create() {
         String type = "Computer";
