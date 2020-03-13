@@ -57,7 +57,7 @@ public class CategoryRepositoryTest extends StudyApplicationTests {
             System.out.println(c.getId());
             System.out.println(c.getType());
             System.out.println(c.getTitle());
-            System.out.println("TEST");
+            System.out.println("깃터미널 한글 테스트!");
         });
     }
 
