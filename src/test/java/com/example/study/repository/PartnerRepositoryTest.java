@@ -13,7 +13,7 @@ public class PartnerRepositoryTest extends StudyApplicationTests {
     @Autowired
     private PartnerRepository partnerRepository;
 
-
+    //한글 테스트
     @Test
     public void create() {
         String name = "파트너01";
