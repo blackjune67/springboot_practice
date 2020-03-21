@@ -44,8 +44,8 @@ public class OrderDetailRepositoryTest extends StudyApplicationTests {
 
     @Test
     public void read() {
-        Long Id = 7L;
-        Optional<OrderDetail> newOrderDetail = orderDetailRepository.findById();
+        Long Id = 1L;
+        Optional<OrderDetail> newOrderDetail = orderDetailRepository.findById(Id);
         //Assert.assertNotNull(newOrderDetail);
         Assert.assertTrue(newOrderDetail.isPresent());
 
