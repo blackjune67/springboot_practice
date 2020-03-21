@@ -27,11 +27,11 @@ public class OrderDetailRepositoryTest extends StudyApplicationTests {
         orderDetail.setArrivalDate(LocalDateTime.now().plusDays(2));
         orderDetail.setQuantity(1);
         orderDetail.setTotalPrice(BigDecimal.valueOf(900000)); //valueOf
+        orderDetail.setOrderGroupId(1L); // 어떤 장바구니에 1:N 관계
+        orderDetail.setItemId(7L); // 어떤 아이템인지
         orderDetail.setCreatedAt(LocalDateTime.now());
-        orderDetail.setCreatedBy("Patner02");
+        orderDetail.setCreatedBy("adminServer");
 
-        orderDetail.setItemId(7L);
-        orderDetail.setOrderGroupId(1L);
         //주문일자
         //orderDetail.setOrderAt(LocalDateTime.now());
         //어떤 사람?

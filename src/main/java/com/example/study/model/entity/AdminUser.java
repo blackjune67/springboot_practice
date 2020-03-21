@@ -27,7 +27,7 @@ public class AdminUser {
     private LocalDateTime passwordUpdateAt;
     private int loginFailCount;
     private LocalDateTime registerdAt;
-    private LocalDateTime unregisterdAt;
+    private LocalDateTime unregistedAt;
     private LocalDateTime createdAt;
     private String createdBy;
     private LocalDateTime updatedAt;
