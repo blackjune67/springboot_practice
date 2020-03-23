@@ -28,9 +28,6 @@ public class AdminUserRepositoryTest extends StudyApplicationTests {
         adminUser.setRegisterdAt(LocalDateTime.now());
         adminUser.setCreatedAt(LocalDateTime.now());
         adminUser.setCreatedBy("Partner01");
-
-        log.warn("adminTEST : >>>> " + adminUser);
-
         adminUserRepository.save(adminUser);
     }
 
